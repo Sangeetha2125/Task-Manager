@@ -16,7 +16,7 @@ const UpdateTask = ({ taskID }) => {
       })
       .catch((err) => {
         console.log(err);
-        if(err.response.status==404){
+        if(err.response.status===404){
           window.location.href="/"
         }
       });
