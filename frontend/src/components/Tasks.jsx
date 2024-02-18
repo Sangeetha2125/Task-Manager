@@ -1,4 +1,5 @@
 import { CheckCircle, Edit2, List, Trash } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Tasks = ({tasks,handleDelete}) => {
 
@@ -9,7 +10,9 @@ const Tasks = ({tasks,handleDelete}) => {
                     {task.completed ? <CheckCircle className="mr-4 h-6 w-6"/>: <List className='h-6 w-6 mr-4' />}
                     <p className="text-lg">{task.name}</p>
                     <div className="action-icons ml-auto flex gap-4 items-center">
-                        <Edit2 className="h-6 w-6 cursor-pointer"/>
+                        <Link to={`${task._id}`}>
+                            <Edit2 className="h-6 w-6 cursor-pointer"/>
+                        </Link>
                         <Trash className="h-6 w-6 cursor-pointer" onClick={()=>handleDelete(task._id)}/>
                     </div>
                 </div>
