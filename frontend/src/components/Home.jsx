@@ -10,7 +10,6 @@ function Home() {
   useEffect(()=>{
     axios.get("/api/tasks")
     .then(res=>{
-      console.log(res.data)
       setTasks(res.data.tasks)
     })
     .catch(err=>{
